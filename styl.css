@@ -1,0 +1,86 @@
+body {
+  font-family: 'Inter', sans-serif;
+  background: #f7f6ef;
+  color: #171417;
+  scroll-behavior: smooth;
+}
+
+/* Effetto Hover Card dinamico */
+.card-hover {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.card-hover::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0%;
+  transition: height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 0;
+}
+
+.card-hover:hover::before {
+  height: 100%;
+}
+
+/* Cambio colore testo al passaggio del mouse */
+.card-hover:hover h3, 
+.card-hover:hover p {
+  color: #f7f7ef;
+}
+
+.card-hover * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Varianti Colore */
+.color-1::before { background: #00aaff; }
+.color-2::before { background: #ff4d00; }
+.color-3::before { background: #00c27e; }
+
+/* Stile Navbar allo Scroll */
+.glass-nav {
+  backdrop-filter: blur(10px);
+  background: #f7f6efcc !important;
+}
+/* Modifica questa sezione nel tuo style.css */
+#servizi {
+    background-color: #171417; /* Sostituisce bg-black per coerenza */
+}
+
+/* Opzionale: aggiungi un tocco di colore ai bordi degli input nel CSS */
+input::placeholder, textarea::placeholder {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+
+/* Cancella l'animazione precedente e incolla questa in fondo a styl.css */
+
+/* Animazione "fluttuante" molto lenta per i gradienti di sfondo */
+@keyframes float-gentle {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(5%, 5%) scale(1.05); }
+}
+
+.animate-float-slow {
+  animation: float-gentle 15s infinite ease-in-out;
+}
+
+.animate-float-slower {
+  animation: float-gentle 20s infinite ease-in-out;
+}
+
+#typing {
+  border-right: 3px solid #bdbca4;
+  animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+  0%, 100% { border-color: transparent; }
+  50% { border-color: #bdbca4; }
+}
